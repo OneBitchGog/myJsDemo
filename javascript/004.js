@@ -70,11 +70,11 @@ for(var key in xiaoshen){
 
 
 
-var a = ['A', 'B', 'C'];
+//var a = ['A', 'B', 'C'];
 
-var s = new Set(['A', 'B', 'C']);
+//var s = new Set(['A', 'B', 'C']);
 
-var m = new Map([[1, 'x'], [2, 'y'], [3, 'z']]);
+//var m = new Map([[1, 'x'], [2, 'y'], [3, 'z']]);
 
 /*
 
@@ -171,8 +171,7 @@ function foo(a, b, c) {
 
 
 */
-
-
+/*
 function foo(a,b,...rest){
 	console.log('a='+a);
 	console.log('b='+b);
@@ -180,10 +179,9 @@ function foo(a,b,...rest){
 }
 
 foo(1,2,3,4,54,6,67);
+*/
 
-
-
-
+//console.log('a'&&'b');
 
 
 
