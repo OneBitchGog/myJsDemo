@@ -1,146 +1,243 @@
 
 
 
+//高级函数
+ 
 
- //函数和方法测试 
+var a = [1,2,3,4,5,6,7,8];
 
+var r = a.map(function(x){
+	return x%2==0;
+})
 
-//function foo() {
-//    var x = 'Hello, ' + y;
-//    console.log(x);
-//    var y = 'Bob';
-//}
-//
-//foo();
+var r1 = a.filter(function(x){
+	return x%2==0;
+})
 
-
-//function letDemo(){
-//	//for(let i= 0;i<=10;i++){
-//	for(var i= 0;i<=10;i++){
-//		
-//	}
-//	++i;
-//	console.log(i)
-//}
-//
-//letDemo()
+//console.log(r1);
 
 
-//var xiaoming = {
-//	name:'小明',
-//	brith:1990,
-//	age:function(){
-//		var y = new Date().getFullYear();
-//		return y- this.brith;
-//	}
-//};
-//
-//console.log(xiaoming.age());
+var a1 = ['1','3df','fdsf','','',null];
 
-
-function getAge() {
-    var y = new Date().getFullYear();
-    return y - this.birth;
+function ss(x){
+	console.log(x.filter(function(y){
+			 y&&y.trim();
+	}))
 }
 
-var xiaoming = {
-    name: '小明',
-    birth: 1990,
-    age: getAge
+//ss(a1);
+//
+
+
+//var arr = ['A', 'B', 'C'];
+//var r = arr.filter(function (element, index, self) {
+//    console.log(element); // 依次打印'A', 'B', 'C'
+//    console.log(index); // 依次打印0, 1, 2
+//    console.log(self); // self就是变量arr
+//    return true;
+//});
+//
+//console.log(r);
+
+
+//var r,arr = ['apple','ss','apple','aa','ww','er','aa','ss'];
+//
+//r = arr.filter(function(ele,index,self){
+//		console.log("-------------------");
+//		console.log(self.indexOf(ele));
+//		console.log(self);
+//		console.log(index);
+//		console.log(ele);
+//		return self.indexOf(ele)==index;
+//})
+//
+//console.log(r);
+
+
+//var r= [];
+//var j= 0
+//for(let i=0;i<100;i++){
+//		
+//		r[j] = function(i){
+//			if(){
+//			}
+//		}
+//		j++;
+//}
+
+//判断是不是质数
+function isPrime(num){
+	if(typeof (num) != 'number' || num <2){
+			//console.log(true);
+			return false;
+	}
+
+	if(num === 2){
+			//console.log(true);
+			return true;
+	}else if(num % 2 == 0){
+			return false;
+	}
+
+	for(let i=3;i<=Math.sqrt(num);i+=2){
+		if(num % i == 0){
+				return false;
+		}	
+	}
+
+	return true;
+}
+//console.log(Math.sqrt(3));
+//console.log(isPrime(3));
+
+//for(let i=0;i<=100;i++){
+//	console.log('---------------');
+//	console.log(isPrime(i));
+//	if(isPrime(i)){
+	//		console.log(i);
+	//}
+//	console.log('***************');
+//}
+
+
+
+
+var arr1 = [1,3,4,56,6];
+function ss(arr){
+		return arr.reduce(function(x,y){
+				return x+y;
+		})
+}
+
+//console.log(ss(arr1));
+
+
+
+
+
+
+
+
+// 定义数字0:
+var zero = function (f) {
+    return function (x) {
+        return 0;
+    }
 };
 
-//console.log(xiaoming.age());
-//console.log(getAge.apply(xiaoming,[]));
-//console.log((getAge.call(xiaoming));
+// 定义数字1:
+var one = function (f) {
+    return function (x) {
+        return f(x);
+    }
+};
 
-//var fn = xiaoming.age;
-//console.log(fn);
-//fn();
-//console.log(fn());
-
-//console.log(Math.max.apply('',[1,3,5,2]));
-
-
-
-//console.log('a'&&'b');
-//console.log('a'&&'b');
-//console.log('a'&&'b');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'||'a');
-//console.log('b'||'a');
-
-
-var i = null;
-var a = [];
-
-for(i=0;i<10;i++){
-	a[i] = function(){
-		console.log(i);
-	}
+// 定义加法:
+function add(n, m) {
+    return function (f) {
+        return function (x) {
+            return m(f)(n(f)(x));
+        }
+    }
 }
 
 
-//a[6]();
+// 计算数字2 = 1 + 1:
+var two = add(one, one);
+//console.log(one);
+//console.log(two);
+//console.log(two);
 
 
-//var a = ['晓丽','建哥'];
+// var x = null || 0;
+// console.log(x);
 
-//for(var i=0;i<10;i++){
-//	a[i] = function(){
-//		console.log(i);
-//	}
-//}
-
-//a[1]();
-
-//var count = 0;
-
-//var oldParseInt = parseInt;
-//
-//global.parseInt = function(){
-//	count +=1;
-//	return oldParseInt.apply(null,[])
-//}
-
-//console.log('a'&& (1>2));
-//console.log(false&&'a');
-
-//var a = [];
-//
-//for(var i= 0;i <10;i++){
-//
-//	a[i] = (function(x){
-//		 return function(){
-//				console.log(x);
-//		 }
-//	})(i);
-//}
-//
-//a[6]();
-//
-var c = (function (){
-	return	1;
-	})();
-
-//console.log(c);
-
-
-
-var a = [];
-
-for(let i=0;i<10;i++){
-	a[i] = function(){
-		console.log(i)
-	}
-//	console.dir(a[i]);
+function create_counter(initial) {
+    var x = initial || 0;
+		console.log(x);
+    return {
+        inc: function () {
+					console.log(x);
+            x++;
+            return x;
+        }
+    };
 }
-console.log(a[0]);
-console.log(a[6]);
-a[6]();
+
+var c1 = create_counter();
+console.log(c1.inc()); // 1
+console.log(c1.inc()); // 2
+console.log(c1.inc()); // 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

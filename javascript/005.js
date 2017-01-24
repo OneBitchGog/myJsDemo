@@ -1,146 +1,153 @@
 
 
 
-
- //函数和方法测试 
-
-
-//function foo() {
-//    var x = 'Hello, ' + y;
-//    console.log(x);
-//    var y = 'Bob';
-//}
-//
-//foo();
-
-
-//function letDemo(){
-//	//for(let i= 0;i<=10;i++){
-//	for(var i= 0;i<=10;i++){
-//		
-//	}
-//	++i;
-//	console.log(i)
-//}
-//
-//letDemo()
-
-
-//var xiaoming = {
-//	name:'小明',
-//	brith:1990,
-//	age:function(){
-//		var y = new Date().getFullYear();
-//		return y- this.brith;
-//	}
-//};
-//
-//console.log(xiaoming.age());
-
-
-function getAge() {
-    var y = new Date().getFullYear();
-    return y - this.birth;
-}
-
-var xiaoming = {
-    name: '小明',
-    birth: 1990,
-    age: getAge
-};
-
-//console.log(xiaoming.age());
-//console.log(getAge.apply(xiaoming,[]));
-//console.log((getAge.call(xiaoming));
-
-//var fn = xiaoming.age;
-//console.log(fn);
-//fn();
-//console.log(fn());
-
-//console.log(Math.max.apply('',[1,3,5,2]));
-
-
-
-//console.log('a'&&'b');
-//console.log('a'&&'b');
-//console.log('a'&&'b');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'&&'a');
-//console.log('b'||'a');
-//console.log('b'||'a');
-
-
-var i = null;
-var a = [];
-
-for(i=0;i<10;i++){
-	a[i] = function(){
-		console.log(i);
-	}
-}
-
-
-//a[6]();
-
-
-//var a = ['晓丽','建哥'];
-
-//for(var i=0;i<10;i++){
-//	a[i] = function(){
-//		console.log(i);
-//	}
-//}
-
-//a[1]();
+//装饰器
 
 //var count = 0;
-
 //var oldParseInt = parseInt;
 //
+//
 //global.parseInt = function(){
-//	count +=1;
-//	return oldParseInt.apply(null,[])
+//		
+//		count += 1;
+//		return oldParseInt.apply(null,[]); 
 //}
+//
+//parseInt('10');
+//parseInt('20');
+//parseInt('30');
 
-//console.log('a'&& (1>2));
-//console.log(false&&'a');
+//console.log(count);
 
+
+
+
+//高阶函数
+
+function jdz (a,b,c){
+	return c(a)+c(b);
+//	console.log(c(a)+c(b))
+}
+
+
+var ss =function(a,b,c){
+	return c(a)+c(b);
+	//console.log(c(a)+c(b))
+}
+
+//console.log(jdz(-2,-3,Math.abs))
+//console.log(ss(-2,-3,Math.abs))
+
+function add(a) {
+    return function (b) {
+        return a + b;
+    }
+}
+//add(2)(3);
+
+//console.log(add(2)(3));
+//console.log(add(2));
+
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//console.log(arr.map()); 
+//console.log(arr.map(function(item){
+//	return item*item;
+	 //item*item;
+//})); 
+
+
+//console.log(arr.map(String));
+
+//console.log(arr.reduce(function(x,y){
+//	return x*10+y;
+//}));
+
+
+
+
+
+//var str = '12345';
+//
 //var a = [];
 //
-//for(var i= 0;i <10;i++){
-//
-//	a[i] = (function(x){
-//		 return function(){
-//				console.log(x);
-//		 }
-//	})(i);
+//for(let i=0;i<str.length;i++){
+//  a[i] = function(){
+//			return str.substring(i,i+1);
+//	}
+//	
+//	
+//	
+//	//a[i] = str.substring(i,i+1);
 //}
 //
-//a[6]();
-//
-var c = (function (){
-	return	1;
-	})();
+//console.log(a[0]());
 
-//console.log(c);
-
-
-
-var a = [];
-
-for(let i=0;i<10;i++){
-	a[i] = function(){
-		console.log(i)
-	}
-//	console.dir(a[i]);
+var str1 = '123456789';
+//console.log(str1.split(''));
+var s =function(){
+	return strl.split('').map(function(x){
+			return x-0;
+	})
 }
-console.log(a[0]);
-console.log(a[6]);
-a[6]();
+
+var s1 =(function(){
+	//return '123456789'.split('').map(function(x){return x-0}).reduce(function(x,y){x*10+y});
+	return '123456789'.split('').map(function(x){return x-0});
+})();
+//console.log(s1.reduce(function(x,y){return x+y});
+//console.log(s1.map(String));
+
+//console.log(s1);
+//console.log(s1.reduce(function(x,y){
+//		return x*10+y;
+//}))
+
+
+//console.log(parseInt('2'));
+
+//console.log(2);
+
+
+console.log(parseInt('---------------------'));
+console.log(parseInt('2',0));
+console.log(parseInt('2',1));
+console.log(parseInt('2',2));
+console.log(parseInt('2',3));
+//console.log();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
